@@ -135,7 +135,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro for Powerline"
-                               :size 13
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -308,7 +308,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   (setq js2-strict-missing-semi-warning nil)
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (setq dotspacemacs-line-numbers 'relative)
+  (setq dotspacemacs-line-numbers '(:relative nill
+                                    :disabled-for-modes dired-mode
+                                              doc-view-mode
+                                              markdown-mode
+                                              org-mode
+                                              pdf-view-mode
+                                              text-mode
+                                     :size-limit-kb 1000))
   )
+
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -318,4 +328,5 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (load custom-file)
+  (setq powerline-default-separator 'arrow)
   )
