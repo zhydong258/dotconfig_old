@@ -331,5 +331,5 @@ you should place your code here."
   (setq powerline-default-separator 'arrow)
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family "WenQuanYi Micor Hei Mono" :size 20)))
+                      (font-spec :family "WenQuanYi Micro  Hei Mono" :size 14)))
   )
