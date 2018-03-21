@@ -329,4 +329,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (load custom-file)
   (setq powerline-default-separator 'arrow)
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+                      (font-spec :family "WenQuanYi Micor Hei Mono" :size 20)))
   )
