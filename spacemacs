@@ -134,9 +134,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro for Powerline"
+   dotspacemacs-default-font '("DejaVu Sans Mono for Powerline"
                                :size 15
-                               :weight normal
+                               :weight regular
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -330,6 +330,7 @@ you should place your code here."
   (load custom-file)
   (setq powerline-default-separator 'arrow)
   (dolist (charset '(kana han cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family "WenQuanYi Micro  Hei Mono" :size 14)))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset (font-spec :family "WenQuanYi Micro Hei Mono"
+                                         :size 14)))
   )
