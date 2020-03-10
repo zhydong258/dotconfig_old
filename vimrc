@@ -22,14 +22,20 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" tmuxline, make tmux statusline looks like airline
+Plugin 'edkolev/tmuxline.vim'
+
 " chinese vimcdoc
 Plugin 'yianwillis/vimcdoc'
+
+" tomasr/molokai
+Plugin 'tomasr/molokai'
 
 " Plugins from vim-scripts repos:
 " Search results counter
 Plugin 'IndexedSearch'
 " Gvim colorscheme
-Plugin 'Wombat'
+"Plugin 'Wombat'
 " Yank history navigation
 Plugin 'YankRing.vim'
 
@@ -47,7 +53,8 @@ filetype plugin indent on
 
 " colors and fonts for gvim
 if has('gui_running')
-    colorscheme wombat
+    "colorscheme wombat
+    colorscheme molokai
     set guioptions-=T
  if has('gui_win32')
    set guifont=Inconsolata-dz\ for\ Powerline:h12
@@ -131,6 +138,9 @@ let g:airline_symbols.maxlinenr = ''
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" Make tmux statusline looks like airline 
+let g:airline#extensions#tmuxline#enabled = 1
 
 " Display index of the buffer
 let g:airline#extensions#tabline#buffer_idx_mode = 1
